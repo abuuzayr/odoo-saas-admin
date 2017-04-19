@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <menuitem name="SMECEN Admin"
+      id="menu_smecen_admin"
+      web_icon="account,static/description/icon.png"
+      sequence="50"/>
+    <menuitem id="menu_smecen_saas_admin" name="SAAS Admin" parent="menu_smecen_admin" sequence="1"/>
+    <menuitem
+      id="menu_smecen_saas_admin_instance"
+      action="smecen_saas_admin.instance_action" name="Instance Profiles" parent="menu_smecen_saas_admin" sequence="50"/>
+  </data>
+</odoo>

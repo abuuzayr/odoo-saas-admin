@@ -10,6 +10,8 @@
         'base',
     ],
     'data': [
+        'views/main/instance.xml',
+        'views/main/menuitem.xml',
     ],
     'demo': [
     ],
@@ -18,5 +20,5 @@
     'installable': True,
     'application': True,
     'auto_install': False,
-    'license': 'Other Proprietary',
+    'license': 'Other proprietary',
 }

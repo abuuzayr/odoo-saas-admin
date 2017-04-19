@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="instance_form" model="ir.ui.view">
+      <field name="name">smecen_saas_admin.instance_form</field>
+      <field name="model">smecen_saas_admin.instance</field>
+      <field name="arch" type="xml">
+        <form string="Instance Profile">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="host_id"/>
+            </group>
+            <group>
+              <button string="Start" name="start_instance" type="object"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="instance_action" model="ir.actions.act_window">
+      <field name="name">Instance Profile</field>
+      <field name="res_model">smecen_saas_admin.instance</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">Click to add a Instance Profile</p>
+      </field>
+    </record>
+  </data>
+</odoo>
