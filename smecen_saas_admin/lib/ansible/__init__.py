@@ -1,4 +1,6 @@
+import logging
 import os
+
 from collections import namedtuple
 from ansible import constants as C
 from ansible.parsing.dataloader import DataLoader
@@ -14,6 +16,9 @@ try:
 except ImportError:
     from ansible.utils.display import Display
     display = Display()
+
+_l = logging.getLogger(__name__)
+
 class Playbook(object):
     option_fields = [
             'ask_pass',
@@ -135,6 +140,7 @@ class Playbook(object):
                 'sftp_common_args': '',
                 'ssh_common_args': '',
                 'ssh_extra_args': '',
+                'skip_tags': [],
                 'su': C.DEFAULT_SU,
                 'subset': C.DEFAULT_SUBSET,
                 'sudo': C.DEFAULT_SUDO,

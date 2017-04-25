@@ -15,7 +15,12 @@ class Instance(models.Model):
                 'remote_user': self.host_id.user,
                 'inventory': '{0},'.format(self.host_id.ip),
                 'verbosity': 2,
-                'extra_vars': ['hello_name=hellyna'],
+                'extra_vars': [
+                    'hello_name=hellyna',
+                    'ansible_port={0}'.format(self.host_id.port),
+                ],
+                # TODO: Secure host key checking
+                'ssh_common_args': '-o StrictHostKeyChecking=no'
             },
         )
         pb.play()
